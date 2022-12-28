@@ -110,16 +110,16 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        $user = auth()->user();
+        // $user = auth()->user();
 
-        $agent = new Agent();
+        // $agent = new Agent();
 
-        if($agent->isMobile())
-        {
-            return redirect('/mobile');
-        }else{
-            return '/';
-        }
+        // if($agent->isMobile())
+        // {
+        //     return redirect('/mobile');
+        // }else{
+        //     return '/';
+        // }
 
 
         // if ($user->user_type == 'Administrador') {
