@@ -116,7 +116,7 @@ class LoginController extends Controller
 
         if($agent->isMobile())
         {
-            return redirect()->route('app.mobile');
+            return redirect('/mobile');
         }else{
             return '/';
         }
