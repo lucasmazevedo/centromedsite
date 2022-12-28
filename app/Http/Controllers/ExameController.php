@@ -14,6 +14,7 @@ use Barryvdh\Snappy\Facades\SnappyPdf as PDF;
 use Illuminate\Support\Facades\Http;
 use File;
 use Illuminate\Support\Facades\Auth;
+use Jenssegers\Agent\Agent;
 
 class ExameController extends Controller
 {
@@ -29,6 +30,14 @@ class ExameController extends Controller
      */
     public function index(Request $request)
     {
+
+        $agent = new Agent();
+        if($agent->isMobile())
+        {
+            return redirect()->route('app.mobile');
+        }
+
+
         if ($request->ajax()) {
             // dd($request->get('search'));
                 if($request->has('situacao'))
