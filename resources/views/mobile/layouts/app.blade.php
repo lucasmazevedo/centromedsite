@@ -25,9 +25,16 @@
                     @endif
                 </div>
                 <div class="header__logo header__logo--text"><a href="#"><strong>Centromed</strong> App</a></div>
-                <div class="header__icon" data-panel="right" data-arrow="left">
-                    {{-- <img
-                        src="{{ asset('/mobile/assets/images/icons/white/user.svg') }}" alt="" title="" /> --}}
+                <div class="header__icon" data-panel="right" data-arrow="left"><a class="menu-link px-5"
+                        href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                        <img src="{{ asset('/mobile/assets/images/icons/white/user.svg') }}" alt=""
+                            title="" /> </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
                 </div>
             </div>
         </header>
